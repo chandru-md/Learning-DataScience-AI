@@ -47,7 +47,7 @@ elif score >= 60:
 else:
     print("F")'''
 
-score = 50
+'''score = 50
 submitted_project = True
 
 if score >=90:
@@ -135,5 +135,54 @@ if not (email[0].isalnum() and email[-1].isalnum()):
     valid = False
 if valid:
     print("Email is valid")
+'''
 
 
+def validate_password(password: str, email: str) -> bool:
+    # 1. Must not be empty
+    if password == "":
+        return False
+    else:
+        # 2. Must be at least 8 characters
+        if len(password) < 8:
+            return False
+        else:
+            # 3. Must include at least 1 uppercase
+            has_upper = False
+            for ch in password:
+                if ch.isupper():
+                    has_upper = True
+                    break
+            if not has_upper:
+                return False
+            else:
+                # 4. Must include at least 1 lowercase
+                has_lower = False
+                for ch in password:
+                    if ch.islower():
+                        has_lower = True
+                        break
+                if not has_lower:
+                    return False
+                else:
+                    # 5. Must not be same as the email
+                    if password == email:
+                        return False
+                    else:
+                        # 6. Must not contain any spaces
+                        has_space = False
+                        for ch in password:
+                            if ch == " ":
+                                has_space = True
+                                break
+                        if has_space:
+                            return False
+                        else:
+                            # 7. Must start and end with a letter or digit
+                            if (password[0].isalnum() and password[-1].isalnum()):
+                                return True
+                            else:
+                                return False
+                            
+
+validate_password("1547845298@#$kathirchandran", "chandrumd@gmail.com")
