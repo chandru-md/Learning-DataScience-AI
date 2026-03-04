@@ -186,3 +186,14 @@ def validate_password(password: str, email: str) -> bool:
                             
 
 validate_password("1547845298@#$kathirchandran", "chandrumd@gmail.com")
+
+# Loops
+
+# for loop
+
+'''for i in range(1,11):
+    print(i,"x3=",i*3)'''
+
+
+for i in (1,2,3,4,5):
+    print("round:", i)
